@@ -106,50 +106,24 @@ def depthFirstSearch(problem):
     counter=0
     PreviousState=problem.getStartState()
     ActualState=PreviousState
-
-    pathlist = util.Stack()
+#    print "PreviousState", PreviousState
     path = util.Stack()
     actions=util.Stack()
-
+ #   print "Path",path.list
     closed=util.Stack()
     path.push(PreviousState)
- #   while not problem.isGoalState(ActualState):
-    while i < 2:
-        ActualStateList=problem.getSuccessors(ActualState)
-
-    while path.isin(ActualStateList[0][0]):
-	    print "Actual", ActualStateList[0][0]
-		poped = ActualStateList.pop
-        if poped:
-            print(poped)
-		    # closed.push(poped)
-
-
-		print "Before", ActualStateList
-		del ActualStateList[0]
-		if len(ActualStateList) == 0:
-			print "YEAH DODO"
-			print pathlist.list
-			ActualStateList.append(pathlist.pop)
-			print pathlist.list
-		print "After",ActualStateList
-
-
-	print pathlist.list
-	pathlist.push(ActualStateList)
-	pathlist.pop
-	print "After POP", pathlist.list
-	path.push(ActualState)
-
-	print "NewState",ActualState
-#	print "Closed", closed.list
-	print "Path", path.list
-    i=i+1
-    PreviousState=ActualState
-#    util.raiseNotDefined()
-
-    return actions.list
-
+    while not problem.isGoalState(ActualState):
+	ActualStateList=problem.getSuccessors(PreviousState)
+	print "----------------------------------------"
+	print "Length",len(ActualStateList)
+	print "Successors",ActualStateList
+	print "ActualState", ActualState
+	print "Iterateuravant",i
+	print "Je verifie la condition", ActualStateList[i][0]
+	print "----------------------------------------"
+	ActualChoice=ActualStateList[i][0]
+	while ActualChoice in path.list or path.list in closed.return actions.list
+"""
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
